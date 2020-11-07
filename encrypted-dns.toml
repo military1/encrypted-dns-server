@@ -23,13 +23,13 @@
 # ]
 
 listen_addrs = [
-    { local = "0.0.0.0:443",    external = "198.51.100.1:443" }
+    { local = "0.0.0.0:443",    external = "94.176.233.93:443" },
 ]
 
 
 ## Upstream DNS server and port
 
-upstream_addr = "9.9.9.9:53"
+upstream_addr = "94.176.233.93:53"
 
 
 ## File name to save the state to
@@ -54,7 +54,7 @@ udp_max_active_connections = 1000
 
 ## Maximum active TCP connections
 
-tcp_max_active_connections = 100
+tcp_max_active_connections = 200
 
 
 ## Optional IP address to connect to upstream servers from.
@@ -81,13 +81,6 @@ cache_ttl_max = 86400
 ## DNS cache: error TTL
 
 cache_ttl_error = 600
-
-
-## DNS cache: to avoid bursts of traffic for popular queries when an
-## RRSET expires, hold a TTL received from an upstream server for
-## `client_ttl_holdon` seconds before decreasing it in client responses.
-
-client_ttl_holdon = 60
 
 
 ## Run as a background process
@@ -124,7 +117,7 @@ daemonize = false
 ## Queries sent to that name will return the client IP address.
 ## This can be very useful for debugging, or to check that relaying works.
 
-my_ip = "my.ip"
+my_ip = "94.176.233.93"
 
 
 ####################################
@@ -135,7 +128,7 @@ my_ip = "my.ip"
 
 ## Provider name (with or without the `2.dnscrypt-cert.` prefix)
 
-provider_name = "secure.dns.test"
+provider_name = "dns.comss.one"
 
 
 ## Does the server support DNSSEC?
@@ -145,7 +138,7 @@ dnssec = true
 
 ## Does the server always returns correct answers (no filtering, including ad blocking)?
 
-no_filters = true
+no_filters = false
 
 
 ## Set to `true` if the server doesn't keep any information that can be used to identify users
